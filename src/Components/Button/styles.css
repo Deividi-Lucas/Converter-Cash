@@ -1,0 +1,15 @@
+button {
+  font-family: 'Open Sans';
+  padding: 0.5rem;  
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  color: blue;
+  background-color: black;
+  font-weight: 900;
+
+}
+
+button:hover{
+  background-color: blue;
+  color: black;
+}
