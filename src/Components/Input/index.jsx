@@ -1,4 +1,4 @@
-import './style.css'
+import './style.scss'
 
 export default function Input({ placeholder, label, onChange, type }) {
   return (
