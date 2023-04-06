@@ -2,12 +2,23 @@ div.Main_project {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: baseline;
+  justify-content: center;
   height: 100vh;
   background-image: url('../../images/cash.jpg');
   background-size: 100% 100%;
   background-attachment: fixed;
+  overflow-x: visible;
 
+  .card-project{
+    background: rgb(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    animation: rotaterBorder 100ms infinite alternate;
+    word-break: break-all;
+
+  }
 
   h6{
     color: rgb(127, 21, 214);
@@ -18,8 +29,23 @@ div.Main_project {
     margin: 6rem;
     padding: 1rem;
     border-radius: 1rem;
-    background: rgb(0, 0, 0,0.1);
+    background: rgba(6, 130, 231, 0.692);
     color: azure;
     font-weight: 600;
+  }
+}
+
+@keyframes rotaterBorder {
+  from {
+    border-color: orangered;
+    border-style: dashed;
+    border-width: 0.18rem;
+    // transform: rotate(360deg);
+  }
+  to{
+    border-color: orangered;
+    border-style: dashed;
+    border-width: 0.2rem;
+    // transform: rotate(0deg);
   }
 }
