@@ -30,7 +30,7 @@ export default function Main() {
         }}
         type={'number'}
       />
-      <span>{toBRL(dolar * valor)}</span>
+      <span className="result">{toBRL(dolar * valor)}</span>
     </div>
   )
 }
