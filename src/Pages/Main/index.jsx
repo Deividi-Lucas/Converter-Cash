@@ -1,9 +1,9 @@
-import './style.css'
 import Title from '../../Components/Title'
 import Input from '../../Components/Input'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { toBRL } from '../../utils/toBRL'
+import './style.scss'
 
 export default function Main() {
   const [dolar, setDolar] = useState(0)
