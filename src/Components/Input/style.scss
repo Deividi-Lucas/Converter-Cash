@@ -1,7 +1,8 @@
-* {
+.input-class{
+  display: flex;
+  flex-direction: column;
   font-family: 'Poppins', sans-serif;
-}
-
-input{
   text-align: center;
+  color: #ffffff;
+  text-shadow: 1px 3px 0.5rem black;
 }
