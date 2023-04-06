@@ -20,17 +20,19 @@ export default function Main() {
 
   return (
     <div className="Main_project">
-      <Title />
-      <h6>Valor do dolar: R${valor}</h6>
-      <Input
-        placeholder={'Digite Aqui:'}
-        label={'Digite o valor abaixo: '}
-        onChange={e => {
-          setDolar(e.target.value)
-        }}
-        type={'number'}
-      />
-      <span className="result">{toBRL(dolar * valor)}</span>
+      <div className="card-project">
+        <Title />
+        <h6>Valor do dolar: R${valor}</h6>
+        <Input
+          placeholder={'Digite Aqui:'}
+          label={'Digite o valor abaixo: '}
+          onChange={e => {
+            setDolar(e.target.value)
+          }}
+          type={'number'}
+        />
+        <span className="result">{toBRL(dolar * valor)}</span>
+      </div>
     </div>
   )
 }
