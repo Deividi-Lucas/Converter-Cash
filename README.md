@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Welcome
+
+Design made for currency conversion (version stable and version in developing)
 
 Acess: https://converter-cash.vercel.app/
 
@@ -7,6 +9,8 @@ Acess: https://converter-cash.vercel.app/
 - This site was developed with the consumption of an API
   and used react, useEffect, useStatte and axios . every project was styled using SASS.
 
-#
+---
+
+## Project with Create React App
 
 ### Create by Deividi Lucas
