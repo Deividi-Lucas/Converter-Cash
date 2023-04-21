@@ -7,7 +7,8 @@ div.Main_project {
   background-image: url('../../images/cash.jpg');
   background-size: 100% 100%;
   background-attachment: fixed;
-  overflow-x: visible;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   .card-project{
     background: rgb(0, 0, 0, 0.5);
@@ -15,7 +16,6 @@ div.Main_project {
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
-    animation: rotaterBorder 100ms infinite alternate;
     word-break: break-all;
 
   }
@@ -26,26 +26,13 @@ div.Main_project {
 
 
   .result {
+    width: max-content;
+    word-break: break-all;
     margin: 6rem;
     padding: 1rem;
     border-radius: 1rem;
     background: rgba(6, 130, 231, 0.692);
     color: azure;
     font-weight: 600;
-  }
-}
-
-@keyframes rotaterBorder {
-  from {
-    border-color: orangered;
-    border-style: dashed;
-    border-width: 0.18rem;
-    // transform: rotate(360deg);
-  }
-  to{
-    border-color: orangered;
-    border-style: dashed;
-    border-width: 0.2rem;
-    // transform: rotate(0deg);
   }
 }
