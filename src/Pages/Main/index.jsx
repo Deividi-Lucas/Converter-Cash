@@ -12,7 +12,7 @@ export default function Main() {
   useEffect(() => {
     axios
       .get('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL')
-      .then(res => setValor(res.data?.USDBRL.ask))
+      .then(res => setValor(res.data?.USDBRL))
       .catch(error => {
         console.error('ops ! ocorreu um erro')
       })
@@ -20,9 +20,22 @@ export default function Main() {
 
   return (
     <div className="Main_project">
+      <div
+        style={{
+          background: 'rgb(0,0,0,0.8)',
+          margin: '1rem',
+          display: 'flex',
+          justifyContent: 'space-around',
+          gap: '3rem',
+          padding: '1rem'
+        }}
+      >
+        <h6 style={{ color: 'green' }}>Dolar alta: R${valor.high}</h6>
+        <h6 style={{ color: 'red' }}>Dolar Baixa: R${valor.low}</h6>
+      </div>
       <div className="card-project">
         <Title />
-        <h6>Valor do dolar: R${valor}</h6>
+        <h6>Dolar Atualmente: R${valor?.ask}</h6>
         <Input
           placeholder={'Digite Aqui:'}
           label={'Digite o valor abaixo: '}
@@ -31,7 +44,7 @@ export default function Main() {
           }}
           type={'number'}
         />
-        <span className="result">{toBRL(dolar * valor)}</span>
+        <span className="result">{toBRL(dolar * valor.ask)}</span>
       </div>
     </div>
   )
