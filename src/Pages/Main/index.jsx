@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { toBRL } from '../../utils/toBRL'
 import './style.scss'
+import CoinCard from '../../Components/Coin'
 
 export default function Main() {
   const [dolar, setDolar] = useState(0)
@@ -12,7 +13,7 @@ export default function Main() {
   useEffect(() => {
     axios
       .get('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL')
-      .then(res => setValor(res.data?.USDBRL))
+      .then(res => setValor(res?.data))
       .catch(error => {
         console.error('ops ! ocorreu um erro')
       })
@@ -20,22 +21,16 @@ export default function Main() {
 
   return (
     <div className="Main_project">
-      <div
-        style={{
-          background: 'rgb(0,0,0,0.8)',
-          margin: '1rem',
-          display: 'flex',
-          justifyContent: 'space-around',
-          gap: '3rem',
-          padding: '1rem'
-        }}
-      >
-        <h6 style={{ color: 'green' }}>Dolar alta: R${valor.high}</h6>
-        <h6 style={{ color: 'red' }}>Dolar Baixa: R${valor.low}</h6>
-      </div>
+      <CoinCard
+        text={valor.USDBRL?.name}
+        coinValue={valor.USDBRL?.ask}
+        text1={valor.EURBRL?.name}
+        coinValue1={valor.EURBRL?.ask}
+        text2={valor.BTCBRL?.name}
+        coinValue2={valor.BTCBRL?.ask}
+      />
       <div className="card-project">
         <Title />
-        <h6>Dolar Atualmente: R${valor?.ask}</h6>
         <Input
           placeholder={'Digite Aqui:'}
           label={'Digite o valor abaixo: '}
@@ -44,7 +39,7 @@ export default function Main() {
           }}
           type={'number'}
         />
-        <span className="result">{toBRL(dolar * valor.ask)}</span>
+        <span className="result">{toBRL(dolar * valor.USDBRL?.ask)}</span>
       </div>
     </div>
   )
